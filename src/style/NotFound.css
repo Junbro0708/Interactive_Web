@@ -49,15 +49,6 @@ div.not-found-body{
   }
 }
 
-@keyframes appearFrom{
-  from{
-    transform: translateY(1000px);
-  }
-  to{
-    transform: translateY(0);
-  }
-}
-
 @keyframes shaking {
   from{
     transform: translateY(0);
@@ -73,13 +64,6 @@ div.not-found-body{
   }
   to{
     transform: translateY(0);
-  }
-}
-
-@keyframes sucking {
-  to{
-    transform: translateY(-250px) scale(0);
-    opacity: 0;
   }
 }
 
@@ -168,4 +152,49 @@ div.not-found-body{
   animation: shaking 2s infinite;
   transform-box: fill-box;
   transform-origin: center;
+}
+
+.animation-1-enter {
+  transform: translateY(1000px);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.animation-1-enter-active {
+  transform: translateY(0px);
+  transition: transform 2s;
+}
+
+.animation-1-exit {
+  transform: translateY(0px);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.animation-1-exit-active {
+  transform: translateY(-250px) scale(0);
+  opacity: 0;
+  transition: 2s;
+}
+
+.animation-2-enter {
+  transform: scaleX(0);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.animation-2-enter-active {
+  transform: scaleX(1);
+  transition: transform 2s;
+}
+
+.animation-2-exit {
+  transform: scaleX(1);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.animation-2-exit-active {
+  transform: scaleX(0);
+  transition: transform 2s;
 }
