@@ -1,0 +1,33 @@
+.header{
+  height: 34px;
+  background-color: #04120C;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.button_in_header{
+  color: #B8E1EE;
+  padding: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* .active_menu{
+  background-color: #013a3b;
+} */
+
+.button_in_header:hover{
+  background-color: #127374;
+}
+
+.right_btns{
+  display: flex;
+}
+
+.right_btns > li{
+  margin: 0;
+  padding: 0;
+}

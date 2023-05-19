@@ -1,8 +1,7 @@
-import './style/App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Home from './components/Home';
-import Content from './components/Content';
+import Scrolling from './components/Scrolling';
 import NotFound from './components/NotFound';
 
 function App() {
@@ -10,7 +9,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path='/' element={<Home/>}/>
-        <Route path='/content' element={<Content/>}/>
+        <Route path='/scrolling' element={<Scrolling/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
     </Router>
