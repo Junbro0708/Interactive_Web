@@ -79,4 +79,10 @@
   border-radius: 10px;
   font-weight: 700;
   font-size: 21px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.document_list:hover{
+  transform: scale(1.02);
 }
