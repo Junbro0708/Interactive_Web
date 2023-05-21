@@ -1,3 +1,9 @@
+.container{
+  height: 2000px;
+  background-color: #00110C;
+  font-family: Arial, Helvetica, sans-serif
+}
+
 .header{
   height: 34px;
   background-color: #04120C;
@@ -10,7 +16,7 @@
 .button_in_header{
   color: #B8E1EE;
   padding: 10px;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
   cursor: pointer;
 }
@@ -30,4 +36,47 @@
 .right_btns > li{
   margin: 0;
   padding: 0;
+}
+
+.bg_wrapper{
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.main_img{
+  min-width: 1000px;
+}
+
+.document_title{
+  color: #B8E1EE;
+  font-size: 3rem;
+}
+
+.main_content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 14%;
+  padding-top: 10vw;
+  row-gap: 5rem;
+}
+
+.document_wrapper{
+  display: flex;
+  justify-content: center;
+  column-gap: 10rem;
+  row-gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.document_list{
+  padding: 1.5rem 3rem;
+  text-align: center;
+  width: 13rem;
+  background-color: #B8E1EE;
+  color: #04120C;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 21px;
 }
