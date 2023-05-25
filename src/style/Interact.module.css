@@ -1,0 +1,74 @@
+.bg{
+  background-color: #111;
+}
+
+.main_img_wrapper{
+  display: flex;
+  justify-content: center;
+  padding-top: 140px;
+}
+
+.intro_main{
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 350px;
+  margin: 0 auto 140px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  margin-top: 54px;
+  font-size: 40px;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.intro_main p{
+  text-align: center;
+}
+
+.join{
+  opacity: .6;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 73px;
+}
+
+.arrow{
+  width: 33px;
+  animation: upAndDown 2s infinite;
+}
+
+@keyframes upAndDown {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-10px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.text_list{
+  width: 384px;
+  margin: 0 auto;
+  padding-bottom: 500px;
+}
+
+.text_list > li{
+  display: inline;
+  font-size: 48px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text_list > li > aside{
+  display: inline-block;
+  content: "";
+  width: 51px;
+  height: 53px;
+  background-image: url("../../public/img/dark_house.png");
+  background-size: 51px 53px;
+  margin-right: 5px;
+}
