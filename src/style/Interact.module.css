@@ -1,5 +1,6 @@
 .bg{
   background-color: #111;
+  height: 500vh;
 }
 
 .main_img_wrapper{
@@ -71,4 +72,15 @@
   background-image: url("../../public/img/dark_house.png");
   background-size: 51px 53px;
   margin-right: 5px;
+}
+
+.panel1_img{
+  position: relative;
+}
+
+.santa_img{
+  height: 380px;
+  position: absolute;
+  right: -80px;
+  transform: translate(80px, -13px) rotate(23deg);
 }

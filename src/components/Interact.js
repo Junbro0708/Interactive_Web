@@ -25,7 +25,12 @@ function Interact() {
         $(lists[parseInt((window.scrollY - scrollStart) / changeGap)+1]).css("color", "black");
         $($(lists[parseInt((window.scrollY - scrollStart) / changeGap)+1]).find('aside')[0]).css("background-image", 'url("/img/dark_house.png")')
       }
-      
+    }
+
+    if(window.scrollY + document.documentElement.clientHeight > $('#santa').offset().top && window.scrollY + document.documentElement.clientHeight < $('#santa').offset().top + $('#santa').height() + 100){
+      const translateX = 80 - 80 * (window.scrollY + document.documentElement.clientHeight - $('#santa').offset().top)
+      console.log(translateX)
+      $('#sante').css("right", `${translateX}px`);
     }
   })
   return (
@@ -61,6 +66,11 @@ function Interact() {
         <li><aside></aside>백 엔드</li>
         <li><aside></aside>풀스택 개발자</li>
       </ul>
+      <div>
+        <section className={styles.panel1_img}>
+          <img id='santa' className={styles.santa_img} src='img/santa_flying.png'/>
+        </section>
+      </div>
     </main>
   );
 }
