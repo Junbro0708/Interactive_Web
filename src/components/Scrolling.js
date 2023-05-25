@@ -112,7 +112,7 @@ function Scrolling() {
         <BG className={styles.main_img}/>
       </div>
       <div className={styles.main_content}>
-        <p id='document' className={styles.document_title}>AVAILABLE NOW</p>
+        <p id='document' className={styles.document_title}>UNAVAILABLE NOW</p>
         <ul className={styles.document_wrapper}>
           <li className={styles.document_list}>WINDOW / MAC</li>
           <li className={styles.document_list}>NINTENDO SWITCH</li>
