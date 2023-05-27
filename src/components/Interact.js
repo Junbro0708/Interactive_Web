@@ -28,7 +28,7 @@ function Interact() {
     }
 
     if(window.scrollY + document.documentElement.clientHeight > $('#santa').offset().top && window.scrollY + document.documentElement.clientHeight < $('#santa').offset().top + $('#santa').height() + 100){
-      const translateX = 80 - 80 * (window.scrollY + document.documentElement.clientHeight - $('#santa').offset().top)
+      const translateX = 80 - 80 * (window.scrollY - $('#santa').offset().top)
       console.log(translateX)
       $('#sante').css("right", `${translateX}px`);
     }
