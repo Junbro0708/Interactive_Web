@@ -101,9 +101,11 @@ function Scrolling() {
   return(
     <div className={styles.container}>
       <header className={styles.header}>
-        <div className={styles.button_in_header} onClick={()=>document.querySelector("#document").scrollIntoView()}>THE MOUNTAIN</div>
+        <div className={styles.button_in_header}>
+          <Link to='/' className={styles.button_in_header}>HOME</Link>
+        </div>
         <ul className={styles.right_btns}>
-          <li><Link to='/scrolling' className={`${styles.button_in_header}`}>MOUNTAIN</Link></li>
+          <li><Link to='/scrolling' className={`${styles.button_in_header}`} onClick={()=>document.querySelector("#document").scrollIntoView()}>MOUNTAIN</Link></li>
           <li><Link to='/scrolling' className={`${styles.button_in_header}`}>AMAZING BLOG</Link></li>
           <li><Link to='/scrolling' className={`${styles.button_in_header}`}>AMAZING NEWS</Link></li>
         </ul>

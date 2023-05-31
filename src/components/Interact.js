@@ -27,9 +27,8 @@ function Interact() {
       }
     }
 
-    if(window.scrollY + document.documentElement.clientHeight > $('#santa').offset().top && window.scrollY + document.documentElement.clientHeight < $('#santa').offset().top + $('#santa').height() + 100){
-      const translateX = 80 + 80 * (window.scrollY - $('#santa').offset().top) * 0.001
-      console.log( `${translateX}px`)
+    if(window.scrollY + document.documentElement.clientHeight > $('#santa').offset().top && window.scrollY + document.documentElement.clientHeight < $('#santa').offset().top + $('#santa').height() + 150){
+      const translateX = 100 + 40 * (window.scrollY - $('#santa').offset().top) * 0.01
       $('#santa').css("right", `${translateX}px`)
     }
   })
@@ -57,11 +56,12 @@ function Interact() {
         <li><aside></aside>육군 만기 전역</li>
         <li><aside></aside>국제 학생회</li>
         <li><aside></aside>홍보부 팀장</li>
-        <li><aside></aside>졸업 후 캐나다 유학</li>
+        <li><aside></aside>캐나다 유학</li>
         <li><aside></aside>탬우드 컬리지</li>
         <li><aside></aside>웹 개발 전공</li>
         <li><aside></aside>캐나다 기업</li>
         <li><aside></aside>6개월 인턴십</li>
+        <li><aside></aside>학위 수여</li>
         <li><aside></aside>프론트 엔드</li>
         <li><aside></aside>백 엔드</li>
         <li><aside></aside>풀스택 개발자</li>

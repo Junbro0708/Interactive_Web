@@ -1,10 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
     <div>
-      <h1>Home</h1>
-      <p>Welcome to the home page!</p>
+      <ul>
+        <li><Link to='/scrolling'>Parellax</Link></li>
+        <li><Link to='/interact'>Interact</Link></li>
+        <li><Link to='/404'>Not Found</Link></li>
+      </ul>
     </div>
   );
 }
