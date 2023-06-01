@@ -28,8 +28,11 @@ function Interact() {
     }
 
     if(window.scrollY + document.documentElement.clientHeight > $('#santa').offset().top && window.scrollY + document.documentElement.clientHeight < $('#santa').offset().top + $('#santa').height() + 150){
-      const translateX = 100 + 40 * (window.scrollY - $('#santa').offset().top) * 0.01
-      $('#santa').css("right", `${translateX}px`)
+      const translateX = 90 - 80 * 1.3 * (window.scrollY + document.documentElement.clientHeight - $('#santa').offset().top) / ($('#santa').height() + 100)
+      const translateY = -13 + 13 * 1.5 * (window.scrollY + document.documentElement.clientHeight - $('#santa').offset().top) / ($('#santa').height() + 100)
+      const rotationDegree = 23 - 23 * 1.7 * (window.scrollY + document.documentElement.clientHeight - $('#santa').offset().top) / ($('#santa').height() + 100)
+      console.log(translateX, translateY, rotationDegree)
+      $('#santa').css("transform", `translate(${translateX}px, ${translateY}px) rotate(${rotationDegree}deg)`)
     }
   })
   return (

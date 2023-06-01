@@ -76,11 +76,13 @@
 
 .panel1_img{
   position: relative;
+  overflow: hidden;
+  height: 380px;
 }
 
 .santa_img{
-  height: 380px;
+  height: 360px;
   position: absolute;
-  right: -80px;
+  right: -90px;
   transform: translate(80px, -13px) rotate(23deg);
 }
