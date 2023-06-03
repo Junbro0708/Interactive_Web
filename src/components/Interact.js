@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import React from 'react';
 import styles from '../style/Interact.module.css';
 import $ from 'jquery';
@@ -9,7 +9,11 @@ function Interact() {
   const scrollEnd = 1585
   const changeGap = 60
 
+  const fixedTextAppearing = 3470
+  const fixedTextDisappearing = 3800
+
   const [lists, setLists] = useState([])
+  const videoRef = useRef(null)
 
   useEffect(() => {
     setLists($(`li`));
@@ -36,19 +40,48 @@ function Interact() {
       $('#santa').css("transform", `translate(${translateX}px, ${translateY}px) rotate(${rotationDegree}deg)`)
     }
 
-    centerElement('fixed_wrapper')
+    centerElement('fixed_wrapper', $('video'))
+
+    if(window.scrollY > $('#video_section').offset().top + $('#video_section').height() - ($('#fixed_wrapper').height() + (document.documentElement.clientHeight - $('#fixed_wrapper').height()) / 2)){
+      $('#fixed_wrapper').css('position', 'relative')
+      $('#fixed_wrapper').css('top', 'initial')
+      $('#fixed_wrapper').css('left', 'initial')
+      $('#fixed_wrapper').css('transform', `translateY(${$('#video_section').height() - $('#fixed_wrapper').height()}px)`)
+    }
+
+    if(window.scrollY > fixedTextAppearing && window.scrollY < fixedTextDisappearing){
+      $('#fixed_description').css('transform', `translateY(${fixedTextDisappearing - window.scrollY}px)`)
+      $('#fixed_description').css('opacity', `${(window.scrollY - fixedTextAppearing) / (300)}`)
+    }else if(window.scrollY > fixedTextDisappearing){
+      $('#fixed_description').css('transform', `translateY(0px)`)
+      $('#fixed_description').css('opacity', `1`)
+    }else{
+      $('#fixed_description').css('transform', `translateY(100px)`)
+      $('#fixed_description').css('opacity', `0`)
+    }
   })
 
   $("#video").on('loadedmetadata', () => {
     $('#video_section').css('height', ($("#video")[0].duration * 500) + 'px')
   })
 
-  const centerElement = elementId => {
+  const centerElement = (elementId, video) => {
     const element = $(`#${elementId}`)
     const parent = $(element.parent())
 
     if(window.scrollY > parent.offset().top - (document.documentElement.clientHeight - element.height()) / 2){
-      console.log("Dd")
+      element.css('position', 'fixed')
+      element.css('top', '50%')
+      element.css('left', '50%')
+      element.css('transform', 'translate(-50%, -50%)')
+
+      if(video) videoRef.current.currentTime = (window.scrollY - $('#video_section').offset().top) / 500
+      console.log(video)
+    }else{
+      element.css('position', 'relative')
+      element.css('top', 'initial')
+      element.css('left', 'initial')
+      element.css('transform', 'initial')
     }
   }
   return (
@@ -89,9 +122,13 @@ function Interact() {
         <section className={styles.panel1_img}>
           <img id='santa' className={styles.santa_img} src='img/santa_flying.png'/>
         </section>
-        <section id='video_section'>
+        <section id='video_section' className={styles.video_section}>
           <div id='fixed_wrapper' className={styles.fixed_wrapper}>
-            <video id='video' className={styles.video} src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" muted loop></video>
+            <video ref={videoRef} id='video' className={styles.video} src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" muted loop></video>
+            <div id='fixed_description' className={styles.fixed_description}>
+              <div>혁신이 만든</div>
+              <div>압도적인 성장</div>
+            </div>
           </div>
         </section>
       </div>

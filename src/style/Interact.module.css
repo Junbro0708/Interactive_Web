@@ -1,6 +1,5 @@
 .bg{
   background-color: #111;
-  height: 500vh;
 }
 
 .main_img_wrapper{
@@ -78,6 +77,7 @@
   position: relative;
   overflow: hidden;
   height: 380px;
+  margin-bottom: 200px;
 }
 
 .santa_img{
@@ -87,10 +87,29 @@
   transform: translate(80px, -13px) rotate(23deg);
 }
 
-
-
 .video{
   display: block;
   margin: 0 auto;
   height: 350px;
+}
+
+.video_section{
+  margin-bottom: 3000px;
+}
+
+.fixed_description{
+  margin: 50px 0 0;
+  color: white;
+  width: 622px;
+  text-align: right;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 50px;
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.fixed_description > div{
+  width: 100%;
 }
