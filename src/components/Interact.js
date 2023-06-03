@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 import styles from '../style/Interact.module.css';
 import $ from 'jquery';
+import { isCompositeComponent } from 'react-dom/test-utils';
 
 function Interact() {
   const scrollStart = 373
@@ -13,6 +14,7 @@ function Interact() {
   useEffect(() => {
     setLists($(`li`));
   }, [])
+  
   $(window).on('scroll', () => {
     if(window.scrollY > scrollStart && window.screenY < scrollEnd){
       if(parseInt((window.scrollY - scrollStart) / changeGap) >= 0 && parseInt((window.scrollY - scrollStart) / changeGap) < lists.length){
@@ -28,13 +30,27 @@ function Interact() {
     }
 
     if(window.scrollY + document.documentElement.clientHeight > $('#santa').offset().top && window.scrollY + document.documentElement.clientHeight < $('#santa').offset().top + $('#santa').height() + 150){
-      const translateX = 90 - 80 * 1.3 * (window.scrollY + document.documentElement.clientHeight - $('#santa').offset().top) / ($('#santa').height() + 100)
+      const translateX = 90 - 80 * 1.8 * (window.scrollY + document.documentElement.clientHeight - $('#santa').offset().top) / ($('#santa').height() + 100)
       const translateY = -13 + 13 * 1.5 * (window.scrollY + document.documentElement.clientHeight - $('#santa').offset().top) / ($('#santa').height() + 100)
       const rotationDegree = 23 - 23 * 1.7 * (window.scrollY + document.documentElement.clientHeight - $('#santa').offset().top) / ($('#santa').height() + 100)
-      console.log(translateX, translateY, rotationDegree)
       $('#santa').css("transform", `translate(${translateX}px, ${translateY}px) rotate(${rotationDegree}deg)`)
     }
+
+    centerElement('fixed_wrapper')
   })
+
+  $("#video").on('loadedmetadata', () => {
+    $('#video_section').css('height', ($("#video")[0].duration * 500) + 'px')
+  })
+
+  const centerElement = elementId => {
+    const element = $(`#${elementId}`)
+    const parent = $(element.parent())
+
+    if(window.scrollY > parent.offset().top - (document.documentElement.clientHeight - element.height()) / 2){
+      console.log("Dd")
+    }
+  }
   return (
     <main className={styles.bg}>
       <div className={styles.main_img_wrapper}>
@@ -72,6 +88,11 @@ function Interact() {
       <div>
         <section className={styles.panel1_img}>
           <img id='santa' className={styles.santa_img} src='img/santa_flying.png'/>
+        </section>
+        <section id='video_section'>
+          <div id='fixed_wrapper' className={styles.fixed_wrapper}>
+            <video id='video' className={styles.video} src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" muted loop></video>
+          </div>
         </section>
       </div>
     </main>

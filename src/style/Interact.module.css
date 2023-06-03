@@ -54,7 +54,7 @@
 .text_list{
   width: 384px;
   margin: 0 auto;
-  padding-bottom: 500px;
+  padding-bottom: 200px;
 }
 
 .text_list > li{
@@ -85,4 +85,12 @@
   position: absolute;
   right: -90px;
   transform: translate(80px, -13px) rotate(23deg);
+}
+
+
+
+.video{
+  display: block;
+  margin: 0 auto;
+  height: 350px;
 }
