@@ -94,7 +94,12 @@
 }
 
 .video_section{
-  margin-bottom: 3000px;
+
+}
+
+.fixed_wrapper{
+  width: 622px;
+  margin: 0 auto;
 }
 
 .fixed_description{
@@ -111,5 +116,5 @@
 }
 
 .fixed_description > div{
-  width: 100%;
+  width: 622px;
 }

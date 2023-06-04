@@ -15,6 +15,8 @@ function Interact() {
   const [lists, setLists] = useState([])
   const videoRef = useRef(null)
 
+  const [currentImage, setCurrentImage] = useState(0)
+
   useEffect(() => {
     setLists($(`li`));
   }, [])
@@ -65,6 +67,26 @@ function Interact() {
     $('#video_section').css('height', ($("#video")[0].duration * 500) + 'px')
   })
 
+  $('#slider_content_wrapper').on('scroll', () => {
+    const imageWidth = $($(`.slider_img`)[0]).width()
+    
+    setCurrentImage(Math.round($('#slider_content_wrapper').scrollLeft() / imageWidth))
+  })
+
+  $('#left_btn').on('click', () => {
+    handleSlideChange(-1)
+  })
+
+  $('#right_btn').on('click', () => {
+    handleSlideChange(1)
+  })
+
+  const handleSlideChange = (step) => {
+    setCurrentImage(currentImage+step)
+
+    $('#slider_content_wrapper').scrollLeft($($(`.slider_img`)[currentImage]).offset().left)
+  }
+
   const centerElement = (elementId, video) => {
     const element = $(`#${elementId}`)
     const parent = $(element.parent())
@@ -76,7 +98,6 @@ function Interact() {
       element.css('transform', 'translate(-50%, -50%)')
 
       if(video) videoRef.current.currentTime = (window.scrollY - $('#video_section').offset().top) / 500
-      console.log(video)
     }else{
       element.css('position', 'relative')
       element.css('top', 'initial')
