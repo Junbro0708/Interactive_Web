@@ -117,7 +117,7 @@ function Interact() {
         <img className={styles.arrow} src='img/down-arrow.png'/>
       </div>
       <ul className={styles.text_list}>
-        <li><aside></aside>이름은 박준형</li>
+        <li><aside></aside>저의 이름은 박준형</li>
         <li><aside></aside>대한민국 출생</li>
         <li><aside></aside>나이 25세</li>
         <li><aside></aside>경기도 용인 출신</li>
@@ -137,7 +137,7 @@ function Interact() {
         <li><aside></aside>학위 수여</li>
         <li><aside></aside>프론트 엔드</li>
         <li><aside></aside>백 엔드</li>
-        <li><aside></aside>풀스택 개발자</li>
+        <li><aside></aside>풀스택</li>
       </ul>
       <div>
         <section className={styles.panel1_img}>
