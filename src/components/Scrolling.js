@@ -116,10 +116,10 @@ function Scrolling() {
       <div className={styles.main_content}>
         <p id='document' className={styles.document_title}>UNAVAILABLE</p>
         <ul className={styles.document_wrapper}>
-          <li className={styles.document_list}>WINDOW + MAC</li>
+          <li className={styles.document_list}>WINDOW / MAC</li>
           <li className={styles.document_list}>NINTENDO SWITCH</li>
-          <li className={styles.document_list}>PLAY STATION 4 / </li>
-          <li className={styles.document_list}>XBOX ONE TWO THREE</li>
+          <li className={styles.document_list}>PLAY STATION 4 / 5</li>
+          <li className={styles.document_list}>XBOX</li>
         </ul>
       </div>
     </div>
